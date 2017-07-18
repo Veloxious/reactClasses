@@ -16,8 +16,21 @@
 
 // Create the Factory class bellow:
 
-
-
+class Factory {
+  constructor() {
+    this.make = 'Mazda'
+    this.location = 'USA'
+    this.airbags = true
+    this.abs = true
+    this.warrenty = '60,000 miles / 3 years'
+    this.massBuild = function massBuild(quantity, options) {
+      console.log(`building ${quantity} ${color} ${trim} ${model}\'s`);
+    }
+    this.customerBuild = function customerBuild(color, options) {
+    console.log(`Building one ${color} ${trim} ${model} with the following options: ${options}`);
+    }
+  }
+}
 
 // CREATE A SUB-CLASS CALLED CAR
 // It should extend from Factory.
@@ -26,9 +39,24 @@
 // Car should also have the following additional properties: enginesize (4), navigation (true), backupcamera (true), warranty (100,000 miles / 5 years)
 // Write your code below:
 
-
-
-
+class Car extends Factory {
+  constructor(model, color, enginetype, transmission, trim, wheels, audio, seats, moonroof) {
+    super()
+    this.model = model
+    this.color = color
+    this.enginetype = enginetype
+    this.transmission = transmission
+    this.trim = trim
+    this.wheelstrim = wheels
+    this.audio = audio
+    this.seatstrim = seats
+    this.moonroof = moonroof
+    this. enginesize = 4
+    this.navigation = true
+    this.backupcamera = true
+    this.warrenty = '100,000 miles / 5 years'
+  }
+}
 // CREATE A SUB-CLASS CALLED SPORT
 // It should extend from Car.
 // The constructor should have the following properties: model, trim, transmission, top, color, seatstrim, audio, wheelstrim. The values should be specified when creating an instance of Sport.
@@ -57,10 +85,12 @@
 
 // Write your 'mazda3' instance below:
 
+const mazda3 = new Car('Madza3','red', 'hybrid', 'automatic', 'touring', 'base', 'premium', 'leather', true)
 
 // Print mazda3. I should have all the above properties.
 // Write your code below:
 
+console.log(mazda3);
 
 
 
